@@ -11,3 +11,4 @@ class AuthenticateConfig(AuthActionConfiguration):
 
 class PullObservationsConfig(PullActionConfiguration):
     endpoint: str = "mobile/vehicles"
+

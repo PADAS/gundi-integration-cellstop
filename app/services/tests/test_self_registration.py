@@ -22,22 +22,40 @@ async def test_register_integration_with_slug_setting(
             "description": f"Default type for integrations with X Tracker",
             "actions": [
                 {
-                    'description': 'X Tracker Pull Observations action',
-                    'is_periodic_action': True,
-                    'name': 'Pull Observations',
-                    'schema': {
-                        'properties': {
-                            'lookback_days': {
-                                'default': 10,
-                                'title': 'Lookback Days',
-                                'type': 'integer'
+                    "type": "pull",
+                    "name": "Pull Observations",
+                    "value": "pull_observations",
+                    "description": "X Tracker Pull Observations action",
+                    "schema": {
+                        "title": "MockPullActionConfiguration",
+                        "type": "object",
+                        "properties": {
+                            "lookback_days": {
+                                "title": "Data lookback days",
+                                "description": "Number of days to look back for data.",
+                                "default": 30,
+                                "minimum": 1, "maximum": 30,
+                                "type": "integer"
+                            },
+                            "force_fetch": {
+                                "title": "Force fetch",
+                                "description": "Force fetch even if in a quiet period.",
+                                "default": False,
+                                "type": "boolean"
                             }
                         },
-                        'title': 'MockPullActionConfiguration',
-                        'type': 'object'
+                        "definitions": {}
                     },
-                    'type': 'pull',
-                    'value': 'pull_observations'
+                    "ui_schema": {
+                        "lookback_days": {
+                            "ui:widget": "range"
+                        },
+                        "force_fetch": {
+                            "ui:widget": "select"
+                        },
+                        "ui:order": ["lookback_days", "force_fetch"],
+                    },
+                    "is_periodic_action": True
                 }
             ],
             "webhook": {
@@ -58,11 +76,23 @@ async def test_register_integration_with_slug_setting(
                             "type": "boolean"
                         }
                     },
+<<<<<<< HEAD
+=======
+                    "definitions": {},
+>>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
                     "required": [
                         "allowed_devices_list",
                         "deduplication_enabled"
                     ]
+<<<<<<< HEAD
                 }
+=======
+                },
+                "ui_schema": {
+                    "allowed_devices_list": {"ui:widget": "list"},
+                    "deduplication_enabled": {"ui:widget": "radio"}
+                },
+>>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
             }
         }
     )
@@ -84,22 +114,41 @@ async def test_register_integration_with_slug_arg(
             "description": f"Default type for integrations with X Tracker",
             "actions": [
                 {
-                    'description': 'X Tracker Pull Observations action',
-                    'is_periodic_action': True,
-                    'name': 'Pull Observations',
-                    'schema': {
-                        'properties': {
-                            'lookback_days': {
-                                'default': 10,
-                                'title': 'Lookback Days',
-                                'type': 'integer'
+                    "type": "pull",
+                    "name": "Pull Observations",
+                    "value": "pull_observations",
+                    "description": "X Tracker Pull Observations action",
+                    "schema": {
+                        "title": "MockPullActionConfiguration",
+                        "type": "object",
+                        "properties": {
+                            "lookback_days": {
+                                "title": "Data lookback days",
+                                "description": "Number of days to look back for data.",
+                                "default": 30,
+                                "minimum": 1, "maximum": 30,
+                                "type": "integer"
+                            },
+                            "force_fetch": {
+                                "title": "Force fetch",
+                                "description": "Force fetch even if in a quiet period.",
+                                "default": False,
+                                "type": "boolean"
                             }
                         },
-                        'title': 'MockPullActionConfiguration',
-                        'type': 'object'
+                        "definitions": {}
                     },
-                    'type': 'pull',
-                    'value': 'pull_observations'
+                    "ui_schema": {
+                        "lookback_days": {
+                            "ui:widget": "range"
+                        },
+                        "force_fetch": {
+
+                            "ui:widget": "select"
+                        },
+                        "ui:order": ["lookback_days", "force_fetch"],
+                    },
+                    "is_periodic_action": True
                 }
             ],
             "webhook": {
@@ -120,11 +169,23 @@ async def test_register_integration_with_slug_arg(
                             "type": "boolean"
                         }
                     },
+<<<<<<< HEAD
+=======
+                    "definitions": {},
+>>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
                     "required": [
                         "allowed_devices_list",
                         "deduplication_enabled"
                     ]
+<<<<<<< HEAD
                 }
+=======
+                },
+                "ui_schema": {
+                    "allowed_devices_list": {"ui:widget": "list"},
+                    "deduplication_enabled": {"ui:widget": "radio"}
+                },
+>>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
             }
         }
     )
@@ -151,22 +212,40 @@ async def test_register_integration_with_service_url_arg(
             'service_url': service_url,
             "actions": [
                 {
-                    'description': 'X Tracker Pull Observations action',
-                    'is_periodic_action': True,
-                    'name': 'Pull Observations',
-                    'schema': {
-                        'properties': {
-                            'lookback_days': {
-                                'default': 10,
-                                'title': 'Lookback Days',
-                                'type': 'integer'
+                    "type": "pull",
+                    "name": "Pull Observations",
+                    "value": "pull_observations",
+                    "description": "X Tracker Pull Observations action",
+                    "schema": {
+                        "title": "MockPullActionConfiguration",
+                        "type": "object",
+                        "properties": {
+                            "lookback_days": {
+                                "title": "Data lookback days",
+                                "description": "Number of days to look back for data.",
+                                "default": 30,
+                                "minimum": 1, "maximum": 30,
+                                "type": "integer"
+                            },
+                            "force_fetch": {
+                                "title": "Force fetch",
+                                "description": "Force fetch even if in a quiet period.",
+                                "default": False,
+                                "type": "boolean"
                             }
                         },
-                        'title': 'MockPullActionConfiguration',
-                        'type': 'object'
+                        "definitions": {}
                     },
-                    'type': 'pull',
-                    'value': 'pull_observations'
+                    "ui_schema": {
+                        "lookback_days": {
+                            "ui:widget": "range"
+                        },
+                        "force_fetch": {
+                            "ui:widget": "select"
+                        },
+                        "ui:order": ["lookback_days", "force_fetch"],
+                    },
+                    "is_periodic_action": True
                 }
             ],
             "webhook": {
@@ -187,11 +266,23 @@ async def test_register_integration_with_service_url_arg(
                             "type": "boolean"
                         }
                     },
+<<<<<<< HEAD
+=======
+                    "definitions": {},
+>>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
                     "required": [
                         "allowed_devices_list",
                         "deduplication_enabled"
                     ]
+<<<<<<< HEAD
                 }
+=======
+                },
+                "ui_schema": {
+                    "allowed_devices_list": {"ui:widget": "list"},
+                    "deduplication_enabled": {"ui:widget": "radio"}
+                },
+>>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
             }
         }
     )
@@ -207,7 +298,7 @@ async def test_register_integration_with_service_url_setting(
     mocker.patch("app.services.self_registration.action_handlers", mock_action_handlers)
     mocker.patch("app.services.self_registration.get_webhook_handler", mock_get_webhook_handler_for_fixed_json_payload)
 
-    await register_integration_in_gundi(gundi_client=mock_gundi_client_v2,)
+    await register_integration_in_gundi(gundi_client=mock_gundi_client_v2, )
 
     assert mock_gundi_client_v2.register_integration_type.called
     mock_gundi_client_v2.register_integration_type.assert_called_with(
@@ -218,22 +309,40 @@ async def test_register_integration_with_service_url_setting(
             'service_url': service_url,
             "actions": [
                 {
-                    'description': 'X Tracker Pull Observations action',
-                    'is_periodic_action': True,
-                    'name': 'Pull Observations',
-                    'schema': {
-                        'properties': {
-                            'lookback_days': {
-                                'default': 10,
-                                'title': 'Lookback Days',
-                                'type': 'integer'
+                    "type": "pull",
+                    "name": "Pull Observations",
+                    "value": "pull_observations",
+                    "description": "X Tracker Pull Observations action",
+                    "schema": {
+                        "title": "MockPullActionConfiguration",
+                        "type": "object",
+                        "properties": {
+                            "lookback_days": {
+                                "title": "Data lookback days",
+                                "description": "Number of days to look back for data.",
+                                "default": 30,
+                                "minimum": 1, "maximum": 30,
+                                "type": "integer"
+                            },
+                            "force_fetch": {
+                                "title": "Force fetch",
+                                "description": "Force fetch even if in a quiet period.",
+                                "default": False,
+                                "type": "boolean"
                             }
                         },
-                        'title': 'MockPullActionConfiguration',
-                        'type': 'object'
+                        "definitions": {}
                     },
-                    'type': 'pull',
-                    'value': 'pull_observations'
+                    "ui_schema": {
+                        "lookback_days": {
+                            "ui:widget": "range"
+                        },
+                        "force_fetch": {
+                            "ui:widget": "select"
+                        },
+                        "ui:order": ["lookback_days", "force_fetch"],
+                    },
+                    "is_periodic_action": True
                 }
             ],
             "webhook": {
@@ -254,11 +363,23 @@ async def test_register_integration_with_service_url_setting(
                             "type": "boolean"
                         }
                     },
+<<<<<<< HEAD
+=======
+                    "definitions": {},
+>>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
                     "required": [
                         "allowed_devices_list",
                         "deduplication_enabled"
                     ]
+<<<<<<< HEAD
                 }
+=======
+                },
+                "ui_schema": {
+                    "allowed_devices_list": {"ui:widget": "list"},
+                    "deduplication_enabled": {"ui:widget": "radio"}
+                },
+>>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
             }
         }
     )
