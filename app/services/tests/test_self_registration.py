@@ -76,23 +76,16 @@ async def test_register_integration_with_slug_setting(
                             "type": "boolean"
                         }
                     },
-<<<<<<< HEAD
-=======
                     "definitions": {},
->>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
                     "required": [
                         "allowed_devices_list",
                         "deduplication_enabled"
                     ]
-<<<<<<< HEAD
-                }
-=======
                 },
                 "ui_schema": {
                     "allowed_devices_list": {"ui:widget": "list"},
                     "deduplication_enabled": {"ui:widget": "radio"}
                 },
->>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
             }
         }
     )
@@ -169,23 +162,16 @@ async def test_register_integration_with_slug_arg(
                             "type": "boolean"
                         }
                     },
-<<<<<<< HEAD
-=======
                     "definitions": {},
->>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
                     "required": [
                         "allowed_devices_list",
                         "deduplication_enabled"
                     ]
-<<<<<<< HEAD
-                }
-=======
                 },
                 "ui_schema": {
                     "allowed_devices_list": {"ui:widget": "list"},
                     "deduplication_enabled": {"ui:widget": "radio"}
                 },
->>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
             }
         }
     )
@@ -266,23 +252,16 @@ async def test_register_integration_with_service_url_arg(
                             "type": "boolean"
                         }
                     },
-<<<<<<< HEAD
-=======
                     "definitions": {},
->>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
                     "required": [
                         "allowed_devices_list",
                         "deduplication_enabled"
                     ]
-<<<<<<< HEAD
-                }
-=======
                 },
                 "ui_schema": {
                     "allowed_devices_list": {"ui:widget": "list"},
                     "deduplication_enabled": {"ui:widget": "radio"}
                 },
->>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
             }
         }
     )
@@ -363,23 +342,16 @@ async def test_register_integration_with_service_url_setting(
                             "type": "boolean"
                         }
                     },
-<<<<<<< HEAD
-=======
                     "definitions": {},
->>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
                     "required": [
                         "allowed_devices_list",
                         "deduplication_enabled"
                     ]
-<<<<<<< HEAD
-                }
-=======
                 },
                 "ui_schema": {
                     "allowed_devices_list": {"ui:widget": "list"},
                     "deduplication_enabled": {"ui:widget": "radio"}
                 },
->>>>>>> 85166d8288b918f98c8958c385b1106edb88effe
             }
         }
     )
