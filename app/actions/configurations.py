@@ -1,11 +1,11 @@
-from pydantic import SecretStr
+from pydantic import SecretStr, Field
 from app.services.utils import GlobalUISchemaOptions
 from .core import PullActionConfiguration, AuthActionConfiguration
 
 
 class AuthenticateConfig(AuthActionConfiguration):
     username: str
-    password: SecretStr
+    password: SecretStr = Field(..., format="password")
 
     ui_global_options: GlobalUISchemaOptions = GlobalUISchemaOptions(
         order=[
