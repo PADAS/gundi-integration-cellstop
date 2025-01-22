@@ -80,14 +80,20 @@ def get_pull_config(integration):
 
 
 async def get_auth_token(integration, config):
-    token_endpoint = config.endpoint
-    # Remove endpoint from request
-    del config.endpoint
+    url = integration.base_url or "https://data.cellstopnm.com/v1/"
+    token_endpoint = "oauth/token"
 
-    url = f"{integration.base_url}{token_endpoint}"
+    url = f"{url}{token_endpoint}"
+
+    params = {
+        "username": config.username,
+        "password": config.password.get_secret_value(),
+        "grant_type": "password",
+        "refresh_token": "string"
+    }
 
     async with httpx.AsyncClient(timeout=120) as session:
-        response = await session.post(url, json=config.dict())
+        response = await session.post(url, json=params)
         response.raise_for_status()
 
     json_response = response.json()
