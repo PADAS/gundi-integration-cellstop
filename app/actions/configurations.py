@@ -1,12 +1,18 @@
+from pydantic import SecretStr, Field
+from app.services.utils import GlobalUISchemaOptions
 from .core import PullActionConfiguration, AuthActionConfiguration
 
 
 class AuthenticateConfig(AuthActionConfiguration):
-    endpoint: str = "oauth/token"
     username: str
-    password: str
-    grant_type: str = "password"
-    refresh_token: str = "string"
+    password: SecretStr = Field(..., format="password")
+
+    ui_global_options: GlobalUISchemaOptions = GlobalUISchemaOptions(
+        order=[
+            "username",
+            "password",
+        ],
+    )
 
 
 class PullObservationsConfig(PullActionConfiguration):
